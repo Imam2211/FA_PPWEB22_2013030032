@@ -3,9 +3,9 @@ include('koneksi.php');
 if($_POST["query"] != '') {
     $search_array = explode(",", $_POST["query"]); 
     $search_text = "'" . implode("', '", $search_array) . "'";
-    $query = $conn->query("SELECT * FROM item WHERE nama IN (".$search_text.") ORDER BY id DESC");
+    $query = $conn->query("SELECT * FROM item WHERE nama IN (".$search_text.") ORDER BY id ASC");
 }else{
-    $query = $conn->query("SELECT * FROM item ORDER BY nama DESC");
+    $query = $conn->query("SELECT * FROM item ORDER BY nama ASC");
 }
 $total_row = mysqli_num_rows($query);
 $output = '';

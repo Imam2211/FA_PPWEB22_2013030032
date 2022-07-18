@@ -44,17 +44,17 @@
             <select name="multi_search_filter" id="multi_search_filter" class="form-control" multiple>
             <?php
             include('koneksi.php');
-            $query = $conn->query("SELECT barcode,nama FROM item ORDER BY id ASC");
-            while ($row = $query ->fetch_object()) {
-            $barcode = $row->barcode;
-            $nama = $row->nama;
-                echo '<option value="'.$nama.'">'.$barcode.' - '.$nama.'</option>';    
+                    $query = $conn->query("SELECT barcode,nama FROM item ORDER BY id ASC");
+                    while ($row = $query ->fetch_object()) {
+                    $barcode = $row->barcode;
+                    $nama = $row->nama;
+                        echo '<option value="'.$nama.'">'.$barcode.' - '.$nama.'</option>';    
             }
           ?>
          </select>
         <br><br>
         <input type="hidden" name="id" id="id" />
-        <div class="container-fluid" id="disini">
+        <div class="container" id="disini">
             <div class="row" id="abc">
             </div>
         </div>
